@@ -1,0 +1,55 @@
+/* BASE */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: normal;
+  padding: 0;
+}
+
+/* APP */
+.app {
+  display: flex;
+  margin: 10px 0;
+}
+
+.json-preview {
+  margin-left: 30px;
+  border-radius: 15px;
+  padding: 5px;
+  border: 1px solid #2e9731;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: fit-content;
+}
+
+.json-preview.level-1 {
+  background-color: #add8e6;
+}
+.json-preview.level-2 {
+  background-color: #87cefa;
+}
+.json-preview.level-3 {
+  background-color: #b0c4de;
+}
+.json-preview.level-4 {
+  background-color: #ffa07a;
+}

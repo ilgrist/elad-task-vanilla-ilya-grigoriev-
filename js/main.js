@@ -1,16 +1,16 @@
 'use strict';
 
 async function onInit() {
-  let myData = await loadJson('../data/data.json');
-  renderJsonPreview(myData);
+  let jsonData = await loadJson('../data/data.json');
+  renderJsonPreview(jsonData);
 }
 
 function renderJsonPreview(jsonData) {
-  let elJsonDisplay = document.querySelector('.app');
-  elJsonDisplay.innerHTML = getElJsonPreview(jsonData, 1);
+  let elJsonPreview = document.querySelector('.app');
+  elJsonPreview.innerHTML = getJsonPreview(jsonData, 1);
 }
 
-function getElJsonPreview(data, level) {
+function getJsonPreview(data, level) {
   const strHTMLs = data.map(
     (item) => `
     <div class="json-preview level-${level}">
@@ -19,7 +19,7 @@ function getElJsonPreview(data, level) {
         <a href=${`//${item.url}`} target="_blank">
           Site Url: ${item.name}
         </a>
-    ${item.subData ? getElJsonPreview(item.subData, calcLevel(level)) : ''}
+    ${item.subData ? getJsonPreview(item.subData, calcLevel(level)) : ''}
     </div>`
   );
   return strHTMLs.join('');
